@@ -5,10 +5,10 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>epsi</groupId>
-  <artifactId>jenkinsSonarExample</artifactId>
+  <artifactId>AngularSonar</artifactId>
   <version>1.0</version>
 
-  <name>jenkinsSonarExample</name>
+  <name>AngularSonar</name>
   <url>http://www.example.com</url>
 
   <properties>
