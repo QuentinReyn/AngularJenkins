@@ -4,5 +4,6 @@ export interface User{
     id_user: number;
     login: string;
     isAdmin: boolean;
+    password: string;
     choice: Choice[];
 }

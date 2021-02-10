@@ -1,1 +1,6 @@
-
+<div class="row">
+  <mat-card class="col m4" *ngFor="let choice of listChoices">
+    <mat-card-title>{{ choice.title }}</mat-card-title>
+    <mat-card-content>{{ choice.voteCount }}</mat-card-content>
+  </mat-card>
+</div>

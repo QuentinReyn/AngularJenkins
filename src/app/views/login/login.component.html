@@ -1,1 +1,21 @@
-<p>login works!</p>
+<form [formGroup]="loginForm">
+    <div class="login-wrapper">
+      <mat-card class="box mat-elevation-z4">
+        <mat-card-header>
+          <mat-card-title>Log in</mat-card-title>
+        </mat-card-header>
+        <div class="example-form">
+          <mat-card-content>
+            <mat-form-field class="example-full-width">
+              <input matInput formControlName="login" placeholder="Username">
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+              <input matInput formControlName="password" type="password" placeholder="Password">
+            </mat-form-field>
+          </mat-card-content>
+          <button mat-stroked-button color="accent" class="btn-block" (click)="login()">Log in</button>
+        </div>
+      </mat-card>
+    </div>
+  </form>
+  
