@@ -16,14 +16,14 @@ export class ChoiceUserUserService {
     return this.http.get(this.API_ENDPOINT + "/choiceuser" + "/edit/"+choiceuserID);
   }
 
-  public addChoiceUser(choiceuserForm: any) {
-    let body = { choiceID: choiceuserForm.value.choiceID, userID: choiceuserForm.value.userID };
+  public addChoiceUser(choiceId:any,userId:any) {
+    let body = { choiceID: choiceId, userID: userId };
     return this.http.post(this.API_ENDPOINT + "/choiceuser"+ "/new", body).subscribe();
   }
 
-  public updateChoiceUser(choiceuserForm: any) {
+  public updateChoiceUser(choiceID:any,userID:any) {
     let body = {};
-    return this.http.post(this.API_ENDPOINT + "/choiceuser"+ "/update/"+choiceuserForm.value.choiceID+"/"+choiceuserForm.value.userID,body).subscribe();
+    return this.http.post(this.API_ENDPOINT + "/choiceuser"+ "/update/"+choiceID+"/"+userID,body).subscribe();
   }
 
   public deleteChoiceUserById(choiceuserID: any) {

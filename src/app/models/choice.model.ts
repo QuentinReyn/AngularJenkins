@@ -1,5 +1,5 @@
 export interface Choice {
-    id: number;
-    title: string;
-    voteCount: number;
+    Id: number;
+    Title: string;
+    VoteCount: number;
 }

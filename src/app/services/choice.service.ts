@@ -23,7 +23,7 @@ export class ChoiceService {
 
   public updateChoice(choiceForm: any) {
     let body = { title: choiceForm.value.title };
-    return this.http.post(this.API_ENDPOINT + "/choice"+ "/update/"+choiceForm.value.id,  body).subscribe();
+    return this.http.post(this.API_ENDPOINT + "/choice"+ "/update/"+choiceForm.value.choiceID,  body).subscribe();
   }
 
   public deleteChoiceById(choiceID: any) {

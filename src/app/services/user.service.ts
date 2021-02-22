@@ -17,13 +17,13 @@ export class UserService {
   }
 
   public addUser(userForm: any) {
-    let body = { name: userForm.value.name, zipCode: userForm.value.zipCode, binIDs: userForm.value.binIDs };
+    let body = { login: userForm.value.login, password: userForm.value.password, isAdmin: userForm.value.isAdmin };
     return this.http.post(this.API_ENDPOINT + "/user"+ "/new", body).subscribe();
   }
 
   public updateUser(userForm: any) {
-    let body = { name: userForm.value.name, zipCode: userForm.value.zipCode, binIDs: userForm.value.binIDs };
-    return this.http.post(this.API_ENDPOINT + "/user"+ "/update/"+userForm.value.id,  body).subscribe();
+    let body = { login: userForm.value.login, password: userForm.value.password, isAdmin: userForm.value.isAdmin };
+    return this.http.post(this.API_ENDPOINT + "/user"+ "/update/"+userForm.value.userID, body).subscribe();
   }
 
   public deleteUserById(userID: any) {

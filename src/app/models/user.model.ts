@@ -1,9 +1,9 @@
 import { Choice } from "./choice.model";
 
 export interface User{
-    id_user: number;
-    login: string;
-    isAdmin: boolean;
-    password: string;
-    choice: Choice[];
+    Id: number;
+    Login: string;
+    IsAdmin: boolean;
+    Password: string;
+    Choices: Choice[];
 }

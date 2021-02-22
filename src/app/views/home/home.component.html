@@ -1,6 +1,10 @@
 <div class="row">
   <mat-card class="col m4" *ngFor="let choice of listChoices">
-    <mat-card-title>{{ choice.title }}</mat-card-title>
-    <mat-card-content>{{ choice.voteCount }}</mat-card-content>
+    <mat-card-title>{{ choice.Title }}</mat-card-title>
+    <mat-card-content>{{ choice.VoteCount }}
+      <br>
+      <button *ngIf="choice.Id == choiceIdOfCurrentUser" disabled mat-button color="primary">Votre choix</button>
+      <button *ngIf="choice.Id != choiceIdOfCurrentUser" mat-button color="primary" (click)="vote(choice.Id)">VOTE +1</button>
+    </mat-card-content>
   </mat-card>
 </div>

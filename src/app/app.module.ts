@@ -45,14 +45,26 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatTreeModule } from '@angular/material/tree';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { UserListComponent } from './views/admin/user-list/user-list.component';
+import { ChoiceListComponent } from './views/admin/choice-list/choice-list.component';
+import { UserFormComponent } from './views/admin/user-list/user-form/user-form.component';
+import { ChoiceFormComponent } from './views/admin/choice-list/choice-form/choice-form.component';
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     SidenavComponent,
-    LoginComponent
+    LoginComponent,
+    UserListComponent,
+    ChoiceListComponent,
+    UserFormComponent,
+    ChoiceFormComponent
   ],
   imports: [
+    CommonModule,
+    MatFormFieldModule,
+    MatInputModule,
     HttpClientModule,
     BrowserModule,
     AppRoutingModule,

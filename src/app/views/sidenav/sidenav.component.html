@@ -11,7 +11,30 @@
         </a>
       </h1>
       <div class="flex-spacer"></div>
-      <a routerLink="/login">Login</a>
+      <div *ngIf="user && user.IsAdmin" class="full-height">
+        <button mat-button [matMenuTriggerFor]="adminPanel" class="button-settings">
+            <mat-icon>settings</mat-icon>
+            <span class="admin-panel-text">
+                App management
+            </span>
+            <mat-icon>arrow_drop_down</mat-icon>
+        </button>
+        <mat-menu #adminPanel="matMenu" yPosition="below" [overlapTrigger]="false">
+            <a routerLink="/admin/users/list" routerLinkActive="active" mat-menu-item>
+                <mat-icon>account_box</mat-icon>
+                <span>Utilisateurs</span>
+            </a>
+            <a routerLink="/admin/choices/list" routerLinkActive="active" mat-menu-item>
+                <mat-icon>calendar_today</mat-icon>
+                <span>Choix</span>
+            </a>
+        </mat-menu>
+    </div>
+      <a routerLink="/login" *ngIf="user == null; else displayUser">Login</a>
+      <ng-template #displayUser>
+        <span [innerHTML]="user.Login"></span>
+        <button mat-button (click)="disconnect()">Logout</button>
+      </ng-template>
     </mat-toolbar>
     
     <mat-sidenav-container class="sidenav-container">

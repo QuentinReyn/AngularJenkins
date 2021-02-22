@@ -1,3 +1,4 @@
+import { getUrlScheme } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
@@ -25,7 +26,7 @@ export class LoginComponent implements OnInit {
       login: ['', Validators.required],
       password: ['', Validators.required],
     });
-
+    this.getUsers();
     // reset login status
     this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
   }
@@ -39,8 +40,10 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    if(this.listUsers.find(m=>m.login == this.loginForm.value['login'] && this.listUsers.find(m=>m.password == this.loginForm.value['password']))){
-      this.router.navigate([this.returnUrl]);
+    var user = this.listUsers.find(m=>m.Login === this.loginForm.value['login'] && this.listUsers.find(m=>m.Password === this.loginForm.value['password']))
+    if(user != null){
+      localStorage.setItem('currentUser', JSON.stringify(user));
+      this.router.navigate([this.returnUrl]);    
     }
   }
 }
